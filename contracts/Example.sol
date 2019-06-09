@@ -13,7 +13,7 @@ contract Example {
         token = _token;
     }
 
-    event TransferFromFailed(address _from, uint256 _amount);
+    event TransferFromFailed(uint256 _amount);
 
     function tryTransferFrom(address _from, address _to, uint256 _amount) public returns(bool returnedBool, uint256 returnedAmount) {
         lastAmount = _amount; // We can query this after transferFrom reverts to confirm that the whole transaction did NOT revert
@@ -30,7 +30,7 @@ contract Example {
             (returnedBool, returnedAmount) = abi.decode(returnData, (bool, uint256));
         } else { // transferFrom reverted. However, the complete tx did not revert and we can handle the case here.
             // I will emit an event here to show this
-            emit TransferFromFailed(_from, _amount);
+            emit TransferFromFailed(_amount);
         }
     }
 }
