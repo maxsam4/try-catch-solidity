@@ -1,0 +1,11 @@
+{
+  "name": "try-catch-solidity",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/maxsam4/try-catch-solidity.git",
+  "author": "Mudit Gupta <guptamudit@ymail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "truffle": "^5.0.21"
+  }
+}
